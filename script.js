@@ -1,10 +1,1 @@
-const p1=document.getElementById('page1'),l=document.getElementById('loading'),p2=document.getElementById('page2');const no=document.getElementById('no');
-function move(){no.style.position='fixed';no.style.left=Math.random()*(innerWidth-120)+'px';no.style.top=Math.random()*(innerHeight-60)+'px';}
-no.onmouseover=move;no.ontouchstart=(e)=>{e.preventDefault();move();};
-yes.onclick=()=>{p1.classList.remove('active');l.classList.add('active');setTimeout(()=>{l.classList.remove('active');p2.classList.add('active');type();},2000);}
-const text=`Dear Iman,
-
-I hope this little surprise makes you smile. I wish you happiness, success, good health and beautiful memories. Keep shining and never stop believing in yourself.
-
-Happy Birthday! ❤️`;let i=0;
-function type(){const el=document.getElementById('msg');let t=setInterval(()=>{el.textContent+=text[i++]||'';if(i>=text.length)clearInterval(t)},30)}
+let pages=document.querySelectorAll('.page'),i=0;function next(){pages[i].classList.remove('active');i++;pages[i].classList.add('active')}let no=document.getElementById('no');function move(){no.style.position='fixed';no.style.left=Math.random()*80+'vw';no.style.top=Math.random()*80+'vh'}no.onmouseover=move;no.ontouchstart=e=>{e.preventDefault();move()};setInterval(()=>{let h=document.createElement('div');h.className='heart';h.innerHTML='❤️';h.style.left=Math.random()*100+'vw';document.body.appendChild(h);setTimeout(()=>h.remove(),5000)},700);
